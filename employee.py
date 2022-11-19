@@ -1,7 +1,11 @@
+"""
+Creating Employee classes for employee,
+developers, and Managers
+"""
+
+
 class Employee:
-    """
-    Employee class
-    """
+    """Employee class"""
     no_of_employees = 0
     raise_pay = 1.04
 
@@ -43,6 +47,37 @@ class Employee:
 
     def __str__(self):
         """
-        modify str to return the employee and employee's email 
+        modify str to return the employee and employee's email
         """
         return f"{self.full_name()} - {self.email()}"
+
+
+class Manager(Employee):
+    """
+    Manager class that can also add and
+    remove employees
+    """
+    def __init__(self, first, last, pay, employees=None):
+        """
+        Manager inherits from the Employee class
+        and adds any employees if any
+        """
+        super().__init__(first, last, pay)
+        if employees is None:
+            self.employees = []
+        else:
+            self.employees = employees
+    
+    def add_employee(self, emp):
+        """
+        Adding an employee
+        """
+        if emp not in self.employees:
+            self.employees.append(emp)
+
+    def remove_employee(self, emp):
+        """
+        Removing an employee
+        """
+        if emp in self.employees:
+            self.employees.remove(emp)
