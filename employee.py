@@ -67,7 +67,7 @@ class Manager(Employee):
             self.employees = []
         else:
             self.employees = employees
-    
+
     def add_employee(self, emp):
         """
         Adding an employee
@@ -81,3 +81,16 @@ class Manager(Employee):
         """
         if emp in self.employees:
             self.employees.remove(emp)
+
+
+class Developer(Employee):
+    """
+    Developers calss to create programmer
+    employees
+    """
+    def __init__(self, first, last, pay, language):
+        """
+        Developer class inherits from the Employee class
+        """
+        super().__init__(first, last, pay)
+        self.language = language
