@@ -9,12 +9,13 @@ class Employee:
     no_of_employees = 0
     raise_pay = 1.04
 
-    def __init__(self, first, last, pay):
+    def __init__(self, first, last, role, pay):
         """
         Initialize the employee class
         """
         self.first = first
         self.last = last
+        self.role = role
         self.pay = pay
         self.name = first + ' ' + last
         Employee.no_of_employees += 1
@@ -57,12 +58,12 @@ class Manager(Employee):
     Manager class that can also add and
     remove employees
     """
-    def __init__(self, first, last, pay, employees=None):
+    def __init__(self, first, last, role, pay, employees=None):
         """
         Manager inherits from the Employee class
         and adds any employees if any
         """
-        super().__init__(first, last, pay)
+        super().__init__(first, last, role, pay)
         if employees is None:
             self.employees = []
         else:
@@ -88,9 +89,9 @@ class Developer(Employee):
     Developers calss to create programmer
     employees
     """
-    def __init__(self, first, last, pay, language):
+    def __init__(self, first, last, role, pay, language):
         """
         Developer class inherits from the Employee class
         """
-        super().__init__(first, last, pay)
-        self.language = language
+        super().__init__(first, last, role, pay)
+        self.expertise = language
