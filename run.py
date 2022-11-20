@@ -23,7 +23,8 @@ def create_manager():
     print("Creating your profile\n")
     manager = Manager(first_name, last_name, salary)
     data.add_employee(manager)
-    print("Manager has been added to the database.")
+    print(f"Welcome {first_name}")
+    print("You have been added to the database.")
 
 
 def add_employees():
@@ -62,8 +63,8 @@ def search_employee():
     """
     Search single employee by first and last name
     """
-    first_name = input("First Name: ").capitalize()
-    last_name = input("Last Name: ").capitalize()
+    first_name = input("First Name:")
+    last_name = input("Last Name:")
     data.select_employee(first_name, last_name)
 
 
@@ -86,13 +87,13 @@ def apply_pay_raise():
     data.update_pay(first_name, last_name, new_pay)
 
 
-
 def get_user_choice():
     """
     Get an operation option from the user
     """
     while True:
         print("Select an option from the following\n")
+        print("0: To exit the program")
         print("1: Create an employee")
         print("2: Delete an employee")
         print("3: Search employees")
@@ -100,7 +101,7 @@ def get_user_choice():
         print("5: Check all employees\n")
         try:
             your_choice = int(input("Your would like to select: "))
-            if your_choice in range(1, 6):
+            if 1 <= your_choice <= 5:
                 print(f"You would like to perform operation {your_choice}")
                 break
         except ValueError:
@@ -108,21 +109,39 @@ def get_user_choice():
     return your_choice
 
 
-requested_operatoin = get_user_choice()
-
-
 def perform_requested_operation(requested_operation):
     """
     Receives users reponse and performs requested task
     """
-    if requested_operation == 1:
-        add_employees()
-    elif requested_operation == 2:
-        remove_employee()
-    elif requested_operation == 3:
-        search_employee()
-    elif requested_operation == 4:
-        apply_pay_raise()
-    elif requested_operation == 5:
-        all_employees()
-    
+    while requested_operation != 0:
+        if requested_operation == 1:
+            add_employees()
+        elif requested_operation == 2:
+            remove_employee()
+        elif requested_operation == 3:
+            search_employee()
+        elif requested_operation == 4:
+            apply_pay_raise()
+        elif requested_operation == 5:
+            all_employees()
+        else:
+            print("Invalid input")
+
+
+def main():
+    """
+    Runs the program
+    """
+    connection = data.connect_database('employee.db')
+
+    c = data.create_cursor(connection)
+
+    data.create_table(c)
+
+    create_manager()
+    get_user_choice()
+    operation = get_user_choice()
+    perform_requested_operation(operation)
+
+
+main()
