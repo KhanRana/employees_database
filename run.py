@@ -8,13 +8,14 @@ connection = data.connect_database('employee.db')
 
 c = data.create_cursor(connection)
 
-data.create_table(c)
+# data.create_table(c)
 
 
 def create_manager():
     """
     Adds Manager to the database
     """
+    print("Add an Admin for the database\n")
     print("Please enter the following details\n")
     first_name = input("First Name: ")
     last_name = input("Last Name: ")
@@ -54,9 +55,10 @@ def remove_employee():
     Removes an employee from the database
     by first and last name
     """
-    first_name = input("First Name: ").capitalize()
-    last_name = input("Last Name: ").capitalize()
+    first_name = input("First Name: ")
+    last_name = input("Last Name: ")
     data.remove_employee(first_name, last_name)
+    print(f"Employee has been removed")
 
 
 def search_employee():
@@ -65,7 +67,7 @@ def search_employee():
     """
     first_name = input("First Name:")
     last_name = input("Last Name:")
-    data.select_employee(first_name, last_name)
+    print(data.select_employee(first_name, last_name))
 
 
 def all_employees():
@@ -81,10 +83,11 @@ def apply_pay_raise():
     """
     Apply pay raise to an employee
     """
-    first_name = input("First Name: ").capitalize()
-    last_name = input("Last Name: ").capitalize()
+    first_name = input("First Name: ")
+    last_name = input("Last Name: ")
     new_pay = int(input("New Pay: "))
     data.update_pay(first_name, last_name, new_pay)
+    print(f"New pay for {first_name} {last_name} is {new_pay}")
 
 
 def get_user_choice():
@@ -100,32 +103,35 @@ def get_user_choice():
         print("4: Apply pay raise")
         print("5: Check all employees\n")
         try:
-            your_choice = int(input("Your would like to select: "))
-            if 1 <= your_choice <= 5:
-                print(f"You would like to perform operation {your_choice}")
+            your_choice = input("Enter your choice here: ")
+            choice = int(your_choice)
+            if 0 <= choice <= 5:
+                print(f"You would like to perform operation {choice}")
                 break
         except ValueError:
             print("Please enter a valid value\n")
-    return your_choice
+    return choice
 
 
 def perform_requested_operation(requested_operation):
     """
     Receives users reponse and performs requested task
     """
-    while requested_operation != 0:
-        if requested_operation == 1:
-            add_employees()
-        elif requested_operation == 2:
-            remove_employee()
-        elif requested_operation == 3:
-            search_employee()
-        elif requested_operation == 4:
-            apply_pay_raise()
-        elif requested_operation == 5:
-            all_employees()
-        else:
-            print("Invalid input")
+    if requested_operation == 0:
+        print("Exit the prgram")
+        exit()
+    if requested_operation == int(1):
+        add_employees()
+    elif requested_operation == int(2):
+        remove_employee()
+    elif requested_operation == int(3):
+        search_employee()
+    elif requested_operation == int(4):
+        apply_pay_raise()
+    elif requested_operation == int(5):
+        all_employees()
+    else:
+        print("Invalid input")
 
 
 def main():
@@ -139,9 +145,13 @@ def main():
     data.create_table(c)
 
     create_manager()
-    get_user_choice()
-    operation = get_user_choice()
-    perform_requested_operation(operation)
+
+    while True:
+        operation = get_user_choice()
+        if operation == 0:
+            print("Terminating the program")
+            break
+        perform_requested_operation(operation)
 
 
 main()

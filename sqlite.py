@@ -40,7 +40,7 @@ def create_table(c):
                     expertise text,
                     pay integer)""")
     except sqlite3.OperationalError:
-        print("Table already exist")
+        print("Table already exist\n")
 
 
 def add_employee(emp):
@@ -74,14 +74,14 @@ def remove_employee(first_name, last_name):
                   {'first': first_name, 'last': last_name})
 
 
-def select_employee(first, last):
+def select_employee(first_name, last_name):
     """
     Search for employees by frist and last name
     """
     with connection:
-        c.execute("""SELECT * from employees WHERE
+        c.execute("""SELECT * From employees WHERE
         first=:first AND last=:last""",
-                  {'first': first, 'last': last})
+                  {'first': first_name, 'last': last_name})
 
         return c.fetchall()
 
