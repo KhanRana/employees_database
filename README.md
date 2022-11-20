@@ -6,7 +6,7 @@ Company Database is a sqlite3 database created using Python and it runs in Code 
 
 Users can create three classes of employees: administrators, developers, managers. Administrators can add, remove, update and fetch other employees using a simple terminal interface.
 
-
+y
 ![Project View]()
 
 # How it Works
