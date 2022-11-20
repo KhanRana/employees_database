@@ -17,9 +17,9 @@ def create_manager():
     """
     print("Add an Admin for the database\n")
     print("Please enter the following details\n")
-    first_name = input("First Name: ")
-    last_name = input("Last Name: ")
-    salary = int(input("Salary: "))
+    first_name = input("First Name:\n")
+    last_name = input("Last Name:\n")
+    salary = int(input("Salary:\n"))
 
     print("Creating your profile\n")
     manager = Manager(first_name, last_name, salary)
@@ -32,12 +32,12 @@ def add_employees():
     """
     Creates new employee and add it to the database
     """
-    first_name = input("First Name: ")
-    last_name = input("Last Name: ")
-    role = input("Role: ")
+    first_name = input("First Name:\n")
+    last_name = input("Last Name:\n")
+    role = input("Role:\n")
     if role.lower() == "programmer":
         expertise = input("Expertise: ")
-    salary = int(input("Salary: "))
+    salary = int(input("Salary:\n"))
     print("Creating New Employee\n")
     if role.lower() == "programmer":
         emp = Developer(first_name, last_name, role, expertise, salary)
@@ -54,8 +54,8 @@ def remove_employee():
     Removes an employee from the database
     by first and last name
     """
-    first_name = input("First Name: ")
-    last_name = input("Last Name: ")
+    first_name = input("First Name:\n")
+    last_name = input("Last Name:\n")
     data.remove_employee(first_name, last_name)
     print("Employee has been removed")
 
@@ -64,8 +64,8 @@ def search_employee():
     """
     Search single employee by first and last name
     """
-    first_name = input("First Name:")
-    last_name = input("Last Name:")
+    first_name = input("First Name:\n")
+    last_name = input("Last Name:\n")
     print(data.select_employee(first_name, last_name))
 
 
@@ -82,9 +82,9 @@ def apply_pay_raise():
     """
     Apply pay raise to an employee
     """
-    first_name = input("First Name: ")
-    last_name = input("Last Name: ")
-    new_pay = int(input("New Pay: "))
+    first_name = input("First Name:\n")
+    last_name = input("Last Name:\n")
+    new_pay = int(input("New Pay:\n"))
     data.update_pay(first_name, last_name, new_pay)
     print(f"New pay for {first_name} {last_name} is {new_pay}")
 
