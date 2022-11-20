@@ -4,9 +4,9 @@
 import sqlite as data
 from employee import Employee, Manager, Developer
 
-connection = data.connect_database('employee.db')
+# connection = data.connect_database('employee.db')
 
-c = data.create_cursor(connection)
+# c = data.create_cursor(connection)
 
 # data.create_table(c)
 
@@ -28,8 +28,7 @@ def create_manager():
     print("You have been added to the database.")
 
 
-def add_employees():
-    
+def add_employees():   
     """
     Creates new employee and add it to the database
     """
@@ -58,7 +57,7 @@ def remove_employee():
     first_name = input("First Name: ")
     last_name = input("Last Name: ")
     data.remove_employee(first_name, last_name)
-    print(f"Employee has been removed")
+    print("Employee has been removed")
 
 
 def search_employee():
