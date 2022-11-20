@@ -61,8 +61,9 @@ def show_all_employee():
 
     with connection:
         c.execute("SELECT * from employees")
-        return c.fetchall()
-
+        rows = c.fetchall()
+        no_of_emps = len(rows) 
+        return [rows, no_of_emps]
 
 
 def remove_employee(last_name):
@@ -79,7 +80,8 @@ def select_employee(first, last):
     Search for employees by frist and last name
     """
     with connection:
-        c.execute("""SELECT * from employees WHERE first=:first AND last=:last""",
+        c.execute("""SELECT * from employees WHERE 
+        first=:first AND last=:last""",
                   {'first': first, 'last': last})
 
         return c.fetchall()
@@ -90,5 +92,6 @@ def update_pay(first, last, new_pay):
     Update the pay of an existing employee
     """
     with connection:
-        c.execute("""UPDATE employees SET pay=:pay WHERE first=:first AND last=:last""",
+        c.execute("""UPDATE employees SET pay=:pay WHERE 
+        first=:first AND last=:last""",
                   {'first': first, 'last': last, 'pay': new_pay})

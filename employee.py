@@ -59,7 +59,8 @@ class Manager(Employee):
     Manager class that can also add and
     remove employees
     """
-    def __init__(self, first, last, role, pay, employees=None):
+
+    def __init__(self, first, last, pay, role="Manager", employees=None):
         """
         Manager inherits from the Employee class
         and adds any employees if any
@@ -70,26 +71,13 @@ class Manager(Employee):
         else:
             self.employees = employees
 
-    def add_employee(self, emp):
-        """
-        Adding an employee
-        """
-        if emp not in self.employees:
-            self.employees.append(emp)
-
-    def remove_employee(self, emp):
-        """
-        Removing an employee
-        """
-        if emp in self.employees:
-            self.employees.remove(emp)
-
 
 class Developer(Employee):
     """
     Developers calss to create programmer
     employees
     """
+
     def __init__(self, first, last, role, pay, language):
         """
         Developer class inherits from the Employee class
