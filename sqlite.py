@@ -94,3 +94,11 @@ def update_pay(first, last, new_pay):
         c.execute("""UPDATE employees SET pay=:pay WHERE 
         first=:first AND last=:last""",
                   {'first': first, 'last': last, 'pay': new_pay})
+
+
+def drop_table():
+    """
+    Deletes the employees table
+    """
+    with connection:
+        c.execute("""DROP TABLE employees""")

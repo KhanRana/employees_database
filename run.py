@@ -149,7 +149,10 @@ def main():
         operation = get_user_choice()
         if operation == 0:
             print("Terminating the program")
+            data.drop_table()
+            print("Records Erased!")
             break
+
         perform_requested_operation(operation)
 
 
