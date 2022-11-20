@@ -1,31 +1,80 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome KhanRana,
+# Company Database
+<br>
+Company Database is a sqlite3 database created using Python and it runs in Code Institute Mock Terminal on Heroku platform.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+Users can create three classes of employees: administrators, developers, managers. Administrators can add, remove, update and fetch other employees using a simple terminal interface.
 
-## Reminders
+
+![Project View]()
+
+# How it Works
+Comonay Database is build on sqlit3, a built-in python database module for light application and testing. The Database first ask for an admin details and add him/her to the databse. Then it asks the admin to selecet from 6 different options to choose the operation. Once the user exits the system it will for terminate the program and erase the data.
+
+# Features
+ - Data Validity
+ - Add Data
+ - Update Data
+ - Retrieve Data
+ - Erase Data
+
+## Data Validity
+![Data Valid](https://github.com/KhanRana/company_employees/blob/d2fcfe4fa521973f0c2eb42c6495066f70976074/images/data%20validity.png)
+
+## Add Data
+![Add Data](https://github.com/KhanRana/company_employees/blob/d2fcfe4fa521973f0c2eb42c6495066f70976074/images/add_data.png)
+
+## Update Data
+![Data update](https://github.com/KhanRana/company_employees/blob/d2fcfe4fa521973f0c2eb42c6495066f70976074/images/update_records.png)
+
+## Retrieve Data
+![Data retrieval](https://github.com/KhanRana/company_employees/blob/d2fcfe4fa521973f0c2eb42c6495066f70976074/images/fetch_data.png)
+
+## Erase Data
+![Data erase](https://github.com/KhanRana/company_employees/blob/d2fcfe4fa521973f0c2eb42c6495066f70976074/images/terminate_erase.png)
+
+ 
+
+
+
+## Future Features
+ - Check for dulicate records and do not add if exist already
+ - Allow user to change mutiple values
+ - Have a more comprehensive database with other features such as secure entry etc.
 
 * Your code must be placed in the `run.py` file
 * Your dependencies must be placed in the `requirements.txt` file
 * Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
+## Data Model
+I decided to create employee class and two mored subclass that inherit from it. A seperate database is creted using sqlite for database.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+The classes can be used in python code to build more complext databases.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Testing
+ - PEP8 without any problem
+ - Data Validity test done 
+ - I have tested the application in both my terminal and Heroku
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## Bugs
+ - I had to press key twice for it to run the users options, I realised I was calling the same function twice - fixed
+ - Got stuck in infinite loop, It was loop the wrong function, moved it and problem solved - fixed
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## Validator
+ - PythonChecker
+ -  PEP8
 
-Connect your GitHub repository and deploy as normal.
+ No Errors were returned
 
-## Constraints
+## Deployment
+ - Create gitHub repository from CI template
+ - Create new Heroku app
+ - Buildback python and NodJS
+ - Link Heroku app to github
+ - Deploy the App
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+# Acknowledgements
+ - Code institute for amazing lessons and templates
+ - All developers who post their work on Youtube that has helped alot
+ - To the Author of Python Crash Course
