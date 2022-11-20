@@ -9,13 +9,14 @@ class Employee:
     no_of_employees = 0
     raise_pay = 1.04
 
-    def __init__(self, first, last, role, pay):
+    def __init__(self, first, last, role, pay, expertise=None,):
         """
         Initialize the employee class
         """
         self.first = first
         self.last = last
         self.role = role
+        self.expertise = expertise
         self.pay = pay
         self.name = first + ' ' + last
         Employee.no_of_employees += 1

@@ -59,3 +59,9 @@ def add_employees(choice):
 
 # add_employees(choice)
 
+# data.remove_employee("Khan")
+
+data.update_pay("Rana", "Khan", 90000)
+
+print(data.select_employee("Rana", "Khan"))
+print(data.show_all_employee())
