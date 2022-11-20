@@ -4,7 +4,6 @@ manipulation
 """
 
 import sqlite3
-from employee import Employee
 
 connection = sqlite3.connect('employee.db')
 
@@ -47,7 +46,7 @@ def create_table(c):
 def add_employee(emp):
     """Adds employee to the database"""
     with connection:
-        c.execute("""INSERT INTO employees VALUES 
+        c.execute("""INSERT INTO employees VALUES
         (:first, :last, :role, :expertise, :pay)""",
                   {'first': emp.first, 'last': emp.last,
                    'role': emp.role, 'expertise': emp.expertise,
@@ -58,21 +57,21 @@ def show_all_employee():
     """
     displays all employess to the terminal
     """
-
     with connection:
         c.execute("SELECT * from employees")
         rows = c.fetchall()
-        no_of_emps = len(rows) 
+        no_of_emps = len(rows)
         return [rows, no_of_emps]
 
 
-def remove_employee(last_name):
+def remove_employee(first_name, last_name):
     """
     Removes an employee from the database
     """
     with connection:
-        c.execute("""DELETE FROM employees WHERE last=:last""",
-                  {'last': last_name})
+        c.execute("""DELETE FROM employees WHERE
+        first=:first AND last=:last""",
+                  {'first': first_name, 'last': last_name})
 
 
 def select_employee(first, last):
@@ -80,12 +79,12 @@ def select_employee(first, last):
     Search for employees by frist and last name
     """
     with connection:
-        c.execute("""SELECT * from employees WHERE 
+        c.execute("""SELECT * from employees WHERE
         first=:first AND last=:last""",
                   {'first': first, 'last': last})
 
         return c.fetchall()
-      
+
 
 def update_pay(first, last, new_pay):
     """
