@@ -5,6 +5,10 @@ Creating employee database
 import sqlite3
 from employee import Employee
 
+connection = sqlite3.connect('employee.db')
+
+c = connection.cursor()
+
 
 def connect_database(database):
     """
@@ -38,3 +42,12 @@ def create_table(c):
     except sqlite3.OperationalError:
         print("Table already exist")
 
+
+def add_employee(emp):
+    """Adds employee to the database"""
+    with connection:
+        c.execute("""INSERT INTO employees VALUES 
+        (:first, :last, :role, :expertise, :pay)""",
+                  {'first': emp.first, 'last': emp.last,
+                   'role': emp.role, 'expertise': emp.expertise,
+                   'pay': emp.pay})
