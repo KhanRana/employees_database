@@ -15,17 +15,22 @@ def create_manager():
     """
     Adds Manager to the database
     """
-    print("Add an Admin for the database\n")
-    print("Please enter the following details\n")
-    first_name = input("First Name:\n")
-    last_name = input("Last Name:\n")
-    salary = int(input("Salary:\n"))
-
-    print("Creating your profile\n")
-    manager = Manager(first_name, last_name, salary)
-    data.add_employee(manager)
-    print(f"Welcome {first_name}")
-    print("You have been added to the database.")
+    while True:
+        print("Add an Admin for the database\n")
+        print("Please enter the following details\n")
+        try:
+            first_name = input("First Name:\n")
+            last_name = input("Last Name:\n")
+            salary = int(input("Salary:\n"))
+            if (first_name or last_name or salary != ''):
+                print("Creating your profile\n")
+                manager = Manager(first_name, last_name, salary)
+                data.add_employee(manager)
+                print(f"Welcome {first_name}")
+                print("You have been added to the database.")
+                break
+        except ValueError:
+            print("Please enter valid value for all enteries, try again!")
 
 
 def add_employees():   
@@ -34,7 +39,7 @@ def add_employees():
     """
     first_name = input("First Name:\n")
     last_name = input("Last Name:\n")
-    role = input("Role:\n")
+    role = input("Role (enter 'programmer' if you are a programmer):\n")
     if role.lower() == "programmer":
         expertise = input("Expertise: ")
     salary = int(input("Salary:\n"))
