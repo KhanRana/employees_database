@@ -62,11 +62,20 @@ The classes can be used in python code to build more complext databases.
 ## Testing
  - PEP8 without any problem
  - Data Validity test done 
+  - Empty strings cannot be entered and sring value for salary would be invalid
+  - Employee records will be created as intended
+  - If no value is entered, the program would not crash
+  - the program will work enven names are entered either in small or capital letter
+  - Employee can be deleted or pay increase if it only exist
+  - An empty list will return if employee does not exist
+  - A full list of employees returns when all employees are fetched
+  - All data is removed when the software is terminated
  - I have tested the application in both my terminal and Heroku
 
 ## Bugs
  - I had to press key twice for it to run the users options, I realised I was calling the same function twice - fixed
  - Got stuck in infinite loop, It was loop the wrong function, moved it and problem solved - fixed
+ - There was a major bug causing the system to crash when empty strings were entered - fixed by using while and try-except statements
 
 ## Validator
  - PythonChecker
