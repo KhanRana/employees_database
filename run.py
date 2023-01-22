@@ -118,7 +118,8 @@ def apply_pay_raise():
             new_pay = int(input("New Pay:\n"))
             if (first_name and last_name != ''):
                 data.update_pay(first_name, last_name, new_pay)
-                print(f"New pay for {first_name} {last_name} is {new_pay} if employee existed")
+                print(f"""New pay for {first_name} {last_name} is {new_pay} if
+                      employee existed""")
                 break
             print("Please enter valid values for all fields!")
         except ValueError:
