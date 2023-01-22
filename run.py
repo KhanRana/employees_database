@@ -19,8 +19,8 @@ def create_manager():
         print("Add an Manager for the database\n")
         print("Please enter the following details\n")
         try:
-            first_name = input("First Name:\n")
-            last_name = input("Last Name:\n")
+            first_name = input("First Name:\n").lower()
+            last_name = input("Last Name:\n").lower()
             salary = int(input("Salary:\n"))
             if (first_name != '' and last_name != '' and salary != ''):
                 print("Creating your profile\n")
@@ -40,8 +40,8 @@ def add_employees():
     """
     while True:
         try:
-            first_name = input("First Name:\n")
-            last_name = input("Last Name:\n")
+            first_name = input("First Name:\n").lower()
+            last_name = input("Last Name:\n").lower()
             role = input(
                 "Role (enter 'programmer' if you are a programmer):\n")
             if role.lower() == "programmer":
@@ -71,8 +71,8 @@ def remove_employee():
     """
     while True:
         try:
-            first_name = input("First Name:\n")
-            last_name = input("Last Name:\n")
+            first_name = input("First Name:\n").lower()
+            last_name = input("Last Name:\n").lower()
             if (first_name and last_name != ''):
                 data.remove_employee(first_name, last_name)
                 print("Employee has been removed if existed in the database")
@@ -88,8 +88,8 @@ def search_employee():
     """
     while True:
         try:
-            first_name = input("First Name:\n")
-            last_name = input("Last Name:\n")
+            first_name = input("First Name:\n").lower()
+            last_name = input("Last Name:\n").lower()
             if (first_name and last_name != ''):
                 print(data.select_employee(first_name, last_name))
                 break
@@ -113,8 +113,8 @@ def apply_pay_raise():
     """
     while True:
         try:
-            first_name = input("First Name:\n")
-            last_name = input("Last Name:\n")
+            first_name = input("First Name:\n").lower()
+            last_name = input("Last Name:\n").lower()
             new_pay = int(input("New Pay:\n"))
             if (first_name and last_name != ''):
                 data.update_pay(first_name, last_name, new_pay)
