@@ -60,7 +60,7 @@ class Manager(Employee):
     remove employees
     """
 
-    def __init__(self, first, last, pay, role="Admin", employees=None):
+    def __init__(self, first, last, pay, role="Manager", employees=None):
         """
         Manager inherits from the Employee class
         and adds any employees if any

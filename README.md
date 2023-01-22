@@ -9,7 +9,7 @@ Users can create three classes of employees: administrators, developers, manager
 ![Project View](https://github.com/KhanRana/company_employees/blob/c851af1e852f1af9abcc7528656b35b5859e5521/images/compare.png)
 
 # How it Works
-Comonay Database is build on sqlit3, a built-in python database module for light application and testing. The Database first ask for an admin details and add him/her to the databse. Then it asks the admin to selecet from 6 different options to choose the operation. Once the user exits the system it will for terminate the program and erase the data.
+Company Database is build on sqlit3, a built-in python database module for light application and testing. The Database first ask for an admin details and add him/her to the databse. Then it asks the admin to selecet from 6 different options to choose the operation. Once the user exits the system it will for terminate the program and erase the data.
 
 # Features
  - Data Validity
@@ -47,7 +47,7 @@ Comonay Database is build on sqlit3, a built-in python database module for light
 * Do not edit any of the other files or your code may not deploy properly
 
 ## Data Model
-I decided to create employee class and two mored subclass that inherit from it. A seperate database is creted using sqlite for database.
+I decided to create employee class and two more subclass that inherit from it. A seperate database is creted using sqlite for database.
 
 The classes can be used in python code to build more complext databases.
 

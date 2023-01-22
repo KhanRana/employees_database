@@ -16,42 +16,52 @@ def create_manager():
     Adds Manager to the database
     """
     while True:
-        print("Add an Admin for the database\n")
+        print("Add an Manager for the database\n")
         print("Please enter the following details\n")
         try:
             first_name = input("First Name:\n")
             last_name = input("Last Name:\n")
             salary = int(input("Salary:\n"))
-            if (first_name or last_name or salary != ''):
+            if (first_name != '' and last_name != '' and salary != ''):
                 print("Creating your profile\n")
                 manager = Manager(first_name, last_name, salary)
                 data.add_employee(manager)
                 print(f"Welcome {first_name}")
                 print("You have been added to the database.")
                 break
+            print("Please enter valid values for all fields!")
         except ValueError:
             print("Please enter valid value for all enteries, try again!")
 
 
-def add_employees():   
+def add_employees():
     """
     Creates new employee and add it to the database
     """
-    first_name = input("First Name:\n")
-    last_name = input("Last Name:\n")
-    role = input("Role (enter 'programmer' if you are a programmer):\n")
-    if role.lower() == "programmer":
-        expertise = input("Expertise: ")
-    salary = int(input("Salary:\n"))
-    print("Creating New Employee\n")
-    if role.lower() == "programmer":
-        emp = Developer(first_name, last_name, role, expertise, salary)
-    else:
-        emp = Employee(first_name, last_name, role, salary)
+    while True:
+        try:
+            first_name = input("First Name:\n")
+            last_name = input("Last Name:\n")
+            role = input(
+                "Role (enter 'programmer' if you are a programmer):\n")
+            if role.lower() == "programmer":
+                expertise = input("Expertise: ")
+            salary = int(input("Salary:\n"))
+            if (first_name and last_name and role and salary != ''):
+                print("Creating New Employee\n")
+                if role.lower() == "programmer":
+                    emp = Developer(first_name, last_name,
+                                    role, expertise, salary)
+                else:
+                    emp = Employee(first_name, last_name, role, salary)
 
-    data.add_employee(emp)
+                data.add_employee(emp)
 
-    print("Employee created and added to the database\n")
+                print("Employee created and added to the database\n")
+                break
+            print("Please enter valid values for all fields!")
+        except ValueError:
+            print("Please enter valid value for all enteries, try again!")
 
 
 def remove_employee():
@@ -59,19 +69,33 @@ def remove_employee():
     Removes an employee from the database
     by first and last name
     """
-    first_name = input("First Name:\n")
-    last_name = input("Last Name:\n")
-    data.remove_employee(first_name, last_name)
-    print("Employee has been removed")
+    while True:
+        try:
+            first_name = input("First Name:\n")
+            last_name = input("Last Name:\n")
+            if (first_name and last_name != ''):
+                data.remove_employee(first_name, last_name)
+                print("Employee has been removed if existed in the database")
+                break
+            print("Please enter valid values for all fields!")
+        except ValueError:
+            print("Please enter valid value for all enteries, try again!")
 
 
 def search_employee():
     """
     Search single employee by first and last name
     """
-    first_name = input("First Name:\n")
-    last_name = input("Last Name:\n")
-    print(data.select_employee(first_name, last_name))
+    while True:
+        try:
+            first_name = input("First Name:\n")
+            last_name = input("Last Name:\n")
+            if (first_name and last_name != ''):
+                print(data.select_employee(first_name, last_name))
+                break
+            print("Please enter valid values for all fields!")
+        except ValueError:
+            print("Please enter valid value for all enteries, try again!")
 
 
 def all_employees():
@@ -87,11 +111,18 @@ def apply_pay_raise():
     """
     Apply pay raise to an employee
     """
-    first_name = input("First Name:\n")
-    last_name = input("Last Name:\n")
-    new_pay = int(input("New Pay:\n"))
-    data.update_pay(first_name, last_name, new_pay)
-    print(f"New pay for {first_name} {last_name} is {new_pay}")
+    while True:
+        try:
+            first_name = input("First Name:\n")
+            last_name = input("Last Name:\n")
+            new_pay = int(input("New Pay:\n"))
+            if (first_name and last_name != ''):
+                data.update_pay(first_name, last_name, new_pay)
+                print(f"New pay for {first_name} {last_name} is {new_pay}")
+                break
+            print("Please enter valid values for all fields!")
+        except ValueError:
+            print("Please enter valid value for all enteries, try again!")
 
 
 def get_user_choice():
