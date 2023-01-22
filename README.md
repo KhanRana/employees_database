@@ -1,15 +1,15 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-# Company Database
+# Employees Database
 <br>
-Company Database is a sqlite3 database created using Python and it runs in Code Institute Mock Terminal on Heroku platform.
+Employees Database is a sqlite3 database created using Python and it runs in Code Institute Mock Terminal on Heroku platform.
 
 Users can create three classes of employees: administrators, developers, managers. Administrators can add, remove, update and fetch other employees using a simple terminal interface.
 
 ![Project View](https://github.com/KhanRana/company_employees/blob/c851af1e852f1af9abcc7528656b35b5859e5521/images/compare.png)
 
 # How it Works
-Company Database is build on sqlit3, a built-in python database module for light application and testing. The Database first ask for an admin details and add him/her to the databse. Then it asks the admin to selecet from 6 different options to choose the operation. Once the user exits the system it will for terminate the program and erase the data.
+Employees Database is build on sqlit3, a built-in python database module for light application and testing. The Database first ask for an admin details and add him/her to the databse. Then it asks the admin to selecet from 6 different options to choose the operation. Once the user exits the system it will for terminate the program and erase the data.
 
 # Features
  - Data Validity
