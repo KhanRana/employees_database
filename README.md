@@ -18,17 +18,24 @@ Company Database is build on sqlit3, a built-in python database module for light
  - Retrieve Data
  - Erase Data
 
+## Add Manager
+![Manager](https://github.com/KhanRana/employees_database/blob/9b32de0f4904d902a2b609ea29bb8364c6fee0ed/images/v1.png)
 ## Data Validity
+![Data Valid for String](https://github.com/KhanRana/employees_database/blob/9b32de0f4904d902a2b609ea29bb8364c6fee0ed/images/v1_1.png)
 ![Data Valid](https://github.com/KhanRana/company_employees/blob/d2fcfe4fa521973f0c2eb42c6495066f70976074/images/data%20validity.png)
 
 ## Add Data
 ![Add Data](https://github.com/KhanRana/company_employees/blob/d2fcfe4fa521973f0c2eb42c6495066f70976074/images/add_data.png)
+![Add Emp](https://github.com/KhanRana/employees_database/blob/9b32de0f4904d902a2b609ea29bb8364c6fee0ed/images/new_emp.png)
 
 ## Update Data
 ![Data update](https://github.com/KhanRana/company_employees/blob/d2fcfe4fa521973f0c2eb42c6495066f70976074/images/update_records.png)
+![Update pay if employee exist](https://github.com/KhanRana/employees_database/blob/9b32de0f4904d902a2b609ea29bb8364c6fee0ed/images/nepay.png)
 
 ## Retrieve Data
 ![Data retrieval](https://github.com/KhanRana/company_employees/blob/d2fcfe4fa521973f0c2eb42c6495066f70976074/images/fetch_data.png)
+![Fetch employee if exist](https://github.com/KhanRana/employees_database/blob/9b32de0f4904d902a2b609ea29bb8364c6fee0ed/images/nepay.png)
+![If employee does not exist](https://github.com/KhanRana/employees_database/blob/9b32de0f4904d902a2b609ea29bb8364c6fee0ed/images/noemp.png)
 
 ## Erase Data
 ![Data erase](https://github.com/KhanRana/company_employees/blob/d2fcfe4fa521973f0c2eb42c6495066f70976074/images/terminate_erase.png)
@@ -41,6 +48,7 @@ Company Database is build on sqlit3, a built-in python database module for light
  - Check for dulicate records and do not add if exist already
  - Allow user to change mutiple values
  - Have a more comprehensive database with other features such as secure entry etc.
+ - check for numeric values in names attributes 
 
 * Your code must be placed in the `run.py` file
 * Your dependencies must be placed in the `requirements.txt` file
